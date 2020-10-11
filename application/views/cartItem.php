@@ -9,9 +9,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../resource/css/cart1.css">
+    <link rel="stylesheet" href="../resource/css/card.css">
+    <link rel="stylesheet" href="../resource/css/nav.css">
+    <link rel="stylesheet" href="../resource/css/footer.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
+<?php include 'nav.php' ?>
+<?php 
+   if(isset($_SESSION['order_id']))
+   {
+    $order_records=reg_user::getOrder($connection,$_SESSION['order_id']);
+    $order_record=mysqli_fetch_assoc($order_records);
+    if($order_record['is_accepted']==1){
+        $_SESSION['isdisable']=0;
+    }
+   }
+?>
                  <!-- button disable and enable function -->
 <script>  function disBtn()
                     {
@@ -28,28 +42,28 @@
                                     document.querySelector(".request").disabled = true;
                                     document.querySelector('.request').style.backgroundColor="gray";
                                     document.querySelector('.request').innerHTML="Pending";
-                     <?php   }
+                     <?php   }else{
+                         ?>         document.querySelector(".request").disabled = true;
+                                    document.querySelector('.request').style.backgroundColor="green";
+                                    document.querySelector('.request').innerHTML="Accepted";
+                                    document.querySelector(".btn3").disabled = false;
+                                    document.querySelector(".btn5").disabled = false;
+                                    document.querySelector('.btn5').style.backgroundColor="rgb(1, 151, 56)";
+                                    document.querySelector('.btn3').style.backgroundColor="rgb(255, 30, 30)";
+                         <?php
+                     }
                     }else{
                         ?>
-                        // document.querySelector(".request").disabled = false;
-                        // // document.querySelector('.request').style.backgroundColor="green";
-                        // document.querySelector('.request').innerHTML="Accepted";
-
-                        
                     <?php
                     }?>
 
                 }  
             ); 
         }
-            
-
+    // call the script function
 disBtn();
 </script>
-          <!--disable button when click the request -->
-
-
-
+    
                                     <!-- header-bar -->
 <div class="cart-wrap">
 <h2 >Product Card</h2>
@@ -61,8 +75,16 @@ disBtn();
         $count=count($_SESSION['cart']);
         echo '<a href="cartItem.php"><img  src="../resource/img/cart-plus-solid.svg" alt=""> Cart <span id="cart-count" class="count">'.$count.'</span></a>
         ';
-      }else{
-        echo '<a href="cartItem.php"><img  src="../resource/img/cart-plus-solid.svg" alt=""> Cart <span id="cart-count" class="count">0</span></a>
+      }
+    ?>
+   </div>
+   <div class="cart-icon">
+    <?php 
+   
+      if(isset($_SESSION['cart']))
+      {
+        $count=count($_SESSION['cart']);
+        echo '<a href="cartItem.php">Total <span id="cart-count" class="count">'.$count.'</span></a>
         ';
       }
     ?>
@@ -77,7 +99,8 @@ $total=0;
  if(isset($_SESSION['cart']))
  {
     $result=reg_user::getProduct($connection);
-    $product_id=array_column($_SESSION['cart'],'product_id');
+    $product_id=array_column($_SESSION['cart'],'product_id'); //create array
+    $amount=0;
          while($row=mysqli_fetch_assoc($result))
          {
              foreach($product_id as $id)
@@ -101,6 +124,7 @@ $total=0;
                                             <p><h4 ><a id="<?php echo $row['id'];?>">1</a></h4></p>
                                         <button  class="btn4" type="button" onclick="quan.increse('<?php echo $row['id'];?>')" >+</button>
                                         <button class="btn2" name="remove" type="submit">cancel</button>
+
                                      </div>
                                      
                                  </div>
@@ -119,7 +143,9 @@ $total=0;
  </div> 
                                          <!-- order price details -->
 
-      <?php $count=count($_SESSION['cart']);?>
+      <?php $count=count($_SESSION['cart']); 
+            $_SESSION['total']=$total;
+      ?>
      <div class="payment">
      <div class="price-details">
         <div class="total">
@@ -164,6 +190,7 @@ $total=0;
      </div>
      
     </div>
+    <?php include 'footer.php'?>
         <script src="../resource/js/cart1.js"></script>
 </body>
 </html> 

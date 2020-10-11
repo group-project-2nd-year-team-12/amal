@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../resource/css/login1.css">
+	<link rel="stylesheet" type="text/css" href="../resource/css/login.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap">
 	<title>Login form</title>
 	

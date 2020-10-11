@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="resource/css/home1.css">
+    <link rel="stylesheet" href="resource/css/home.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
@@ -39,13 +39,14 @@
                 { 
                     if($_SESSION['level']=="food_supplier")
                     {
-                       echo '<li class="nav_item "><a href="controller/orderCon.php?click">Orders</a></li>';
+                       echo '<li class="nav_item "><a href="controller/orderAcptCon.php?click">Orders</a></li>';
                     }
                 }
                     ?>
                 <li class="nav_item "><a href="# ">About us</a></li>
                 <li class="nav_item "><a href="# ">Contact Us</a></li>
                 <li class="nav_item "><a href="controller/cartCon.php?click">Food Item</a></li>
+                <?php if(!isset($_SESSION['email'])){ echo "<li onClick='dropDown();' class='drop'><a href='#'>Register  <i class='fa fa-caret-down'></i></a></li>"; }?>
             </ul>
         </div>
         <div class="container_warper1">

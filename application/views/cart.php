@@ -6,9 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../resource/css/cart.css">
+    <link rel="stylesheet" href="../resource/css/card.css">
+    <link rel="stylesheet" href="../resource/css/nav.css">
+    <link rel="stylesheet" href="../resource/css/footer.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
+  <?php include 'nav.php' ?>
 <div class="cart-wrap">
 <h2 >Product Card</h2>
   <div class="cart-icon">
@@ -17,9 +21,6 @@
       {
         $count=count($_SESSION['cart']);
         echo '<a href="cartItem.php"><img  src="../resource/img/cart-plus-solid.svg" alt=""> Cart <span id="cart-count" class="count">'.$count.'</span></a>
-        ';
-      }else{
-        echo '<a href="cart.php"><img  src="../resource/img/cart-plus-solid.svg" alt=""> Cart <span id="cart-count" class="count">0</span></a>
         ';
       }
     ?>
@@ -39,7 +40,7 @@
                     <h1><?php echo $row['product_name'];?></h1>
                     <img src="<?php echo $row['image'];?>" alt="">
                     <p class="price"><?php echo $row['price'];?></p>
-                    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+                    <p>Some text about the jeans. </p>
                     <h3>Quntity</h3>
                     <input type="text" name="quantity" value="1">
                     <input type="hidden" name="name" value="<?php echo $row['product_name'];?> ">
@@ -52,7 +53,7 @@
   }
  ?>
   </div> 
-
+<?php include 'footer.php'?>
 <script src="../resource/js/cart.js"></script>
 </body>
 </html> 

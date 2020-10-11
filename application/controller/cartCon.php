@@ -10,6 +10,8 @@
 ?>
 
 <?php
+
+// check and create cart 
 if(isset($_POST['add']))
 {
   if(isset($_SESSION['email'])&& isset($_SESSION['first_name']) && isset($_SESSION['last_name']))
@@ -49,8 +51,7 @@ if(isset($_POST['add']))
 }
 }
 
-
-
+//if click remove button clear the cart
 if(isset($_POST['remove']))
 {
     if($_GET['action']=='remove')
@@ -66,11 +67,7 @@ if(isset($_POST['remove']))
     }
 }
 
+
+//
 ?>
-<!-- cash-controller -->
-<?php 
-  if(isset($_POST['method']))
-  {
-   print_r($_POST['method']);
-  }
-?>
+

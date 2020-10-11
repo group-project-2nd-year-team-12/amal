@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2020 at 05:08 PM
+-- Generation Time: Oct 11, 2020 at 04:28 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -102,22 +102,36 @@ CREATE TABLE `food_request` (
   `is_accepted` int(1) NOT NULL,
   `product_name` varchar(50) NOT NULL,
   `quantity` int(25) NOT NULL,
-  `order_id` int(50) NOT NULL
+  `order_id` int(50) NOT NULL,
+  `total` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `food_request`
 --
 
-INSERT INTO `food_request` (`request_id`, `email`, `address`, `first_name`, `last_name`, `is_accepted`, `product_name`, `quantity`, `order_id`) VALUES
-(259, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'phone1 ', 1, 2147483647),
-(260, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'phone2 ', 1, 2147483647),
-(261, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'phone2 ', 1, 2147483647),
-(262, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'phone2 ', 1, 1602250386),
-(263, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'phone3 ', 1, 1602250386),
-(264, '2018cs092@stu.ucsc.cmb.ac.lk', '310/1 ,Delgasduwa, Dodanduwa', 'Amal', 'Lakshan', 0, 'phone2 ', 1, 1602250483),
-(265, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'phone2 ', 1, 1602250579),
-(266, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'phone3 ', 1, 1602250579);
+INSERT INTO `food_request` (`request_id`, `email`, `address`, `first_name`, `last_name`, `is_accepted`, `product_name`, `quantity`, `order_id`, `total`) VALUES
+(286, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Mixed Rice ', 1, 1602417515, 850),
+(287, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Chicken Rice ', 1, 1602417515, 850),
+(288, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Rice and Curry ', 1, 1602417515, 850),
+(289, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Chicken Rice ', 1, 1602418606, 700),
+(290, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Mixed Rice ', 1, 1602418606, 700),
+(291, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Mixed Rice ', 1, 1602418884, 400),
+(292, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Mixed Rice ', 1, 1602419290, 699.98),
+(293, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Chicken Rice ', 1, 1602419290, 699.98),
+(294, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Chicken Rice ', 1, 1602419422, 699.98),
+(295, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Mixed Rice ', 1, 1602419422, 699.98),
+(296, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Chicken Rice ', 1, 1602419528, 849.97),
+(297, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Rice and Curry ', 1, 1602419528, 849.97),
+(298, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Mixed Rice ', 1, 1602419528, 849.97),
+(299, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Mixed Rice ', 1, 1602422235, 849.97),
+(300, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Chicken Rice ', 1, 1602422235, 849.97),
+(301, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Rice and Curry ', 1, 1602422235, 849.97),
+(302, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Mixed Rice ', 1, 1602422664, 699.98),
+(303, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 1, 'Chicken Rice ', 1, 1602422664, 699.98),
+(304, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'Mixed Rice ', 1, 1602423068, 849.97),
+(305, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'Chicken Rice ', 1, 1602423068, 849.97),
+(306, 'lakshanamal100@gmail.com', '310/1, Delgasduwa,Dodanduwa', 'Ishan', 'Resmika', 0, 'Rice and Curry ', 1, 1602423068, 849.97);
 
 -- --------------------------------------------------------
 
@@ -273,7 +287,7 @@ ALTER TABLE `boardings_owner`
 -- AUTO_INCREMENT for table `food_request`
 --
 ALTER TABLE `food_request`
-  MODIFY `request_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=267;
+  MODIFY `request_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=307;
 
 --
 -- AUTO_INCREMENT for table `food_supplier`

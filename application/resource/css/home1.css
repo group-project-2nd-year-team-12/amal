@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +24,7 @@ body {
     background-color:#63e6be;
 }
 .nav{
-    padding: 0 40px 0 300px;
+    padding: 0 40px 0 400px;
     background-color: black;
 }
 
@@ -54,13 +54,14 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
     color: white;
     cursor: pointer;
 }
 
 .nav_item{
     width: 100%;
+    margin: 0 10px 0 10px;
     text-align: center;
     transition: 0.5s all ease-in;
     border-bottom: 2px solid rgb(0, 0, 0);
@@ -101,10 +102,6 @@ li {
 }
 
 .para1 {
-    padding-top: 100px;
-    width: 50%;
-    height: 400px;
-    color: white;
     opacity: 0;
     transform: translateY(30px);
     transition: 1.5s all ease-out;
@@ -137,6 +134,7 @@ li {
     background-image: url(../img/undraw_on_the_way_ldaq.svg);
     background-size: cover;
     opacity: 1;
+    color: white;
     transform: translateX(0px);
 }
 
@@ -167,7 +165,7 @@ li {
 .para4 {
     width: 40%;
     height: 550px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     opacity: 0;
     transform: translateY(30px);
     transition: 1.5s all ease-out;
@@ -177,8 +175,9 @@ li {
     padding-top: 200px;
     width: 40%;
     height: 550px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     opacity: 1;
+    color: white;
     transform: translateY(0px);
 }
 
@@ -186,7 +185,7 @@ li {
     padding: 30px 0 0 30px;
     width: 40%;
     height: 400px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     opacity: 0;
     transform: translateY(30px);
     transition: 0.5s all ease-in-out;
@@ -195,14 +194,15 @@ li {
 .para5-apper{
     width: 40%;
     height: 400px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     opacity: 1;
+    color: white;
     transform: translateY(0px);
 }
 .para6{
     width: 60%;
     height: 400px;
-    
+    color: white;
     opacity: 0;
     transform: translateX(-100px);
     transition: 1.5s all ease-in-out;
@@ -211,6 +211,7 @@ li {
 .para6-apper{
     width: 60%;
     height: 400px;
+    color: white;
     background-image: url(../img/undraw_buy_house_560d.svg);
     background-size: cover;
     background-position: bottom;
@@ -302,4 +303,10 @@ li {
 .notification{
     color: white;
     padding-right:15px ;
+}
+.drop{
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
 }

@@ -16,26 +16,17 @@ if(isset($_GET['click1']))
        $address=$_SESSION['address'];
        $products=$_SESSION['cart'];
        $order_id=time().mt_rand($email);
+       $total=$_SESSION['total'];
+       $_SESSION['order_id']=$order_id;
     //    print_r($products);
        foreach($products as $product)
        {
-        reg_user::food_request($email,$address,$first_name,$last_name,$product['item_name'],$product['item_quantity'],$order_id,$connection);
+        reg_user::food_request($email,$address,$first_name,$last_name,$product['item_name'],$product['item_quantity'],$order_id,$total,$connection);
        }
        $_SESSION['isdisable']=1;
       header('Location:../views/cartItem.php');
 }
 }
 
-if(isset($_GET['click']))
-{
-   $results=reg_user::getOrder($connection);
-   $records=mysqli_fetch_assoc($results);
-   
-   foreach($records as $record)
-   {
-      print_r($$record);
-   }
 
-
-}
 ?>
