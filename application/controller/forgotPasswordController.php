@@ -31,7 +31,7 @@ if (isset($_POST['submit']))
                     $userEmail=$user['email'];
                     $token=$user['token'];
                     sendResetLink($userEmail,$token);
-                    header('Location:../views/user_verify.php?email='.$userEmail);
+                    header('Location:../views/user_verify.php?email='.$userEmail.'&token='.$token);
                 }else{
                     $errors[]="*You dont have an account in this email address";
                     header('Location:../views/user_forgot_password.php?'.http_build_query(array('param'=>$errors)));
@@ -45,5 +45,13 @@ if (isset($_POST['submit']))
             header('Location:../views/user_forgot_password.php?'.http_build_query(array('param'=>$errors)));
         }
     }
+
+    if(isset($_POST['resend']))
+{
+ 
+        sendResetLink($_POST['email'],$_POST['token']);
+        header('Location:../views/emailVerify.php?resend&email='.$_POST['email'].'&token='.$_POST['token']);  
+
+}
 
 ?>

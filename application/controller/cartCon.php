@@ -29,10 +29,10 @@ if(isset($_POST['add']))
           'item_quantity'=>$_POST['quantity']
       );
       $_SESSION['cart'][$count]=$item_array;
-      echo '<script>window.location="../views/cart.php"</script>';
+      echo '<script>window.location="../views/cart.php?id='.$_POST['FSid'].'"</script>';
     }else{
       echo '<script>alert("Product already added")</script>';
-      echo '<script>window.location="../views/cart.php"</script>';
+      echo '<script>window.location="../views/cart.php?id='.$_POST['FSid'].'"</script>';
     }
   }else{
     $item_array=array(
@@ -42,7 +42,7 @@ if(isset($_POST['add']))
       'item_quantity'=>$_POST['quantity']
   );
   $_SESSION['cart'][0]=$item_array;
-  echo '<script>window.location="../views/cart.php"</script>';
+  echo '<script>window.location="../views/cart.php?id='.$_POST['FSid'].'"</script>';
   }
 }else{
   echo '<script>alert("Plase logging first")</script>';

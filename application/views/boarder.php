@@ -8,6 +8,5 @@
 <body>
     <h1>Hi I am boader</h1>
     <a href="../controller/logoutController.php">Log out </a>
-    <?php session_start(); print_r($_SESSION)?>
 </body>
 </html>

@@ -7,9 +7,11 @@
 	
 </head>
 <body>
-<div class="nav">
-<div class="logo">Bodima </div>
-</div>
+	<div class="image"><img src="../resource/img/login.svg" alt=""></div>
+	<div class="container">
+		<div class="para">
+		<h1><b>U</b>ser <b>L</b>ogin</h1>
+		</div>
 	<div class="login">
 	<img src="../resource/img/new1.png" class="profile">
 	   <h1>Login Here</h1>
@@ -32,11 +34,6 @@
 
 		
 	</div>
-<div class="footer">
-	<div class="right">Copy right 2020:Bodima.lk </div>
-</div>
-
-
-
+	</div>
 </body>
 </html>

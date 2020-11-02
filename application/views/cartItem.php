@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../resource/css/card.css">
+    <link rel="stylesheet" href="../resource/css/card1.css">
     <link rel="stylesheet" href="../resource/css/nav.css">
     <link rel="stylesheet" href="../resource/css/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -29,7 +29,7 @@
                  <!-- button disable and enable function -->
 <script>  function disBtn()
                     {
-                    document.addEventListener("DOMContentLoaded", function(event) {
+                        document.addEventListener("DOMContentLoaded", function(event) {
                         document.querySelector(".btn3").disabled = true;
                         document.querySelector(".btn5").disabled = true;
                         document.querySelector('.btn3').style.backgroundColor="gray";
@@ -192,5 +192,7 @@ $total=0;
     </div>
     <?php include 'footer.php'?>
         <script src="../resource/js/cart1.js"></script>
+        <script src="../resource/js/home1.js"></script>
+<script src="../resource/js/jquery.js"></script>
 </body>
 </html> 
