@@ -84,10 +84,24 @@ function fixedTop(){
 document.querySelector('.burger').addEventListener('click',(e)=>
 {
     const slide=document.querySelector('.slide-nav');
+    const slide_li=document.querySelectorAll('.slide-nav ul li');
     if(slide.classList.contains('slide-nav-animate'))
+    {
         slide.classList.remove('slide-nav-animate');
+    }
     else
+    {
         slide.classList.add('slide-nav-animate');
+    }
+    slide_li.forEach((link,index) => {
+        if(link.style.animation)
+        {
+            link.style.animation="";
+        }else{
+            link.style.animation='slideLink 1s ease forwards '+index/7 +'s ';
+        }
+    });
+    document.querySelector('.burger').classList.toggle('rot');
 })
 
 

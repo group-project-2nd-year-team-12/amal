@@ -1,4 +1,6 @@
-
+li {
+    list-style: none;
+}
 
 .header {
     border-top: 2px solid black;
@@ -17,8 +19,8 @@ a{
     color: #fcc709;
 }
 .nav-fixed{
-    padding: 0 20px 0 160px;
-    background-color: rgb(21, 21, 24)!important; 
+    /* padding: 0 20px 0 0px; */
+    background-color: rgb(0, 0, 0)!important; 
     top: 0;
     position: fixed;
     right: 0;
@@ -28,9 +30,10 @@ a{
 }
 .nav{
     position: sticky;
-    padding: 0 20px 0 0px;
+    /* padding: 0 20px 0 0px; */
     background-color: rgb(13, 13, 189);
     transition: 0.9s;
+    z-index: 1;
 }
 
 
@@ -91,9 +94,7 @@ a{
     font-size: 18px;
 }
 
-li {
-    list-style: none;
-}
+
 .user{
     padding-right: 10px;
     color: #fcc709;
@@ -133,8 +134,9 @@ li {
       justify-content: space-around;
       text-align: center;
       align-items: center;
-      transition: 0.9s ;
+      transition:  0.9s all ease-in ;
       transform: translateX(-200px);
+      z-index: -1;
   }
   .slide-nav-animate{
       position: fixed;
@@ -151,22 +153,24 @@ li {
       transition: 0.9s ;
       transform: translateX(0px);
   }
-  .slide-nav-animate ul li{
-      padding: 30px 0;
-      color: rgb(215, 218, 220);
-      
-      transition: 0.5s;
-  }
   
   .slide-nav ul li{
-      padding: 30px 0;
-      color: rgb(157, 158, 159);
-  }
-  .slide-nav-animate ul li:hover{
-      color: white;
-      font-size: x-large;
-      padding: 30px 0;
-  }
+    padding: 30px 0;
+    color: rgb(157, 158, 159);
+    cursor: pointer;
+    opacity: 0;
+}
+  .slide-nav-animate ul li{
+    padding: 30px 0;
+    color: rgb(215, 218, 220);
+    transition: 0.5s;
+    opacity: 0;
+}
+.slide-nav-animate ul li:hover{
+    color: white;
+    font-size: x-large;
+    padding: 30px 0;
+}
   
   .slide-nav-after{
       left: 0;
@@ -181,18 +185,58 @@ li {
   .burger{
       background-color: black;
       display:inline-flex;
-      width: 200px;   
+      /* width: 200px;    */
       padding: 22px 88px;
       /* margin: 0 86px; */
       
   }
   .burger >div >div{
-      padding: 2px;
-      margin-bottom: 4px;
-      background-color:rgb(200, 191, 191);
-      width: 20px;  
-  }
+    padding: 2px;
+    margin-bottom: 4px;
+    background-color:rgb(200, 191, 191);
+    width: 20px;  
+    transition: all 0.5s ease;
+}
   
   .burger >div :hover{
       background-color: white;
   }
+
+  @keyframes slideLink{
+    from {
+        opacity: 0;
+        transform: translateX(-150px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.rot .line1
+{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.rot .line2
+{
+    opacity: 0;
+}
+.rot .line3
+{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.nav-sign {
+    color: black !important;
+    width: 80;
+    border-radius: 20px;
+    background-color: white;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.slide-nav h4{
+    color: white ;
+    padding-bottom: 20px;
+    font-weight: lighter;
+}

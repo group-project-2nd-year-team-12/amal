@@ -1,9 +1,11 @@
 <?php
+//session_start();
 
 
 class Boarding_post_Entity 
 {
     public $B_post_id;
+    public $BOid;
     public $category;
     public $girlsBoys;
     public $person_count;
@@ -21,9 +23,11 @@ class Boarding_post_Entity
     public $review;
     public $keymoney;
     
-    function __construct($B_post_id, $category, $girlsBoys, $person_count, $cost_per_person, $rating, $image, $house_num,$lane,$city,$district,$description,$location,$lifespan,$post_amount,$review,$keymoney) {
+    function __construct($B_post_id,$BOid, $category, $girlsBoys, $person_count, $cost_per_person, $rating, $image, $house_num,$lane,$city,$district,$description,$location,$lifespan,$post_amount,$review,$keymoney) {
        
     $this->B_post_id     = $B_post_id;
+    $this->BOid          = $BOid;
+
     $this->category      = $category;
     $this->girlsBoys     = $girlsBoys;
     $this->person_count  = $person_count;

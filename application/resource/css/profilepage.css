@@ -20,24 +20,24 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-blend-mode: darken;
-
-  
 }
 
 div.bg_profile{
-	margin-top: 400;
-	margin-left: 700;
-	background-color: #345234;
+  margin-top: 400;
+  margin-left:700;
+  background-color: #345234;
+  background-color: red;
 }
 
 
 .content_template{
-  margin-left:380px; 
+  margin-left:20%; 
   padding:20px;
+
 }
 
 .content_container{
-	margin-top: 50px;
+  margin-top: 50px;
   border: 3px solid;
   margin-right: 50px;
    margin-left: -85px;
@@ -52,18 +52,18 @@ div.bg_profile{
   background: rgba(255,255,255, 0.7);
   box-sizing:border-box;
   
+
 }
 .pro_inner{
-  margin-left: 150px;
+  margin-left: 25%;
 }
 
 div .title{
   margin-right: 300px;
   padding:10px;
   text-align: center;
-  /*background-image: linear-gradient(to bottom right,#4970fc, #05f2b7);*/
-background: rgb(9,9,121);
-background: linear-gradient(148deg, rgba(9,9,121,0.7919621749408984) 0%, rgba(0,212,255,1) 100%);
+  background: rgb(9,9,121);
+  background: linear-gradient(148deg, rgba(9,9,121,0.7919621749408984) 0%, rgba(0,212,255,1) 100%);
 
 }
 
@@ -94,8 +94,6 @@ background: linear-gradient(148deg, rgba(9,9,121,0.4042553191489362) 0%, rgba(0,
   font-family: "Roboto", sans-serif;
   color:black;
   padding-left: 150px;
-
-  
 }
 
 .content{
@@ -103,6 +101,7 @@ background: linear-gradient(148deg, rgba(9,9,121,0.4042553191489362) 0%, rgba(0,
   font-size: 18px;
   padding: 40px;
   font-family: "Roboto", sans-serif;
+  background-color: red;
 }
 
 .t_head{

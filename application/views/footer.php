@@ -29,10 +29,10 @@
 <div class="follow">
     <h2>Follow Us</h2>
    <div class="social">
-    <a href="index.php"><i class="fa fa-linkedin fa-2x"></i></a>
-    <a href="index.php"><i class="fa fa-facebook-f fa-2x"></i></a>
-    <a href="index.php"><i class="fa fa-twitter fa-2x"></i></a>
-    <a href="index.php"><i class="fa fa-whatsapp fa-2x"></i></a>
+    <a href="index.php"><i class="fab fa-linkedin-in fa-2x"></i></a>
+    <a href="index.php"><i class="fab fa-facebook-f fa-2x"></i></a>
+    <a href="index.php"><i class="fab fa-twitter fa-2x"></i></a>
+    <a href="index.php"><i class="fab fa-whatsapp fa-2x"></i></a>
    </div>
 </div>
 <div class="copyright">

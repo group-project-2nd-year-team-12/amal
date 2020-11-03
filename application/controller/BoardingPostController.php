@@ -1,5 +1,6 @@
-<?php
 
+<?php
+require_once ('../models/reg_userIshan.php');
 require ("../models/BoardingPostModel.php");
 
 class BoardingPostController {
@@ -29,7 +30,10 @@ class BoardingPostController {
         foreach ($BoardingPostArray as $key => $boarding_post) 
         {
             $result = $result .
-                    "<a class='divtable' href='http://localhost:1234/application/views/BoardingPage.php?id=$boarding_post->B_post_id'>
+                    "
+                    <a class='divtable' href='../views/BoardingPage.php?id=$boarding_post->B_post_id'>
+
+
                     <table class = 'boardingPostTable'>
                         <tr>
                             <th rowspan='6' width = '150px' ><img runat = 'server' src = '$boarding_post->image' /></th>
@@ -119,8 +123,61 @@ function CreateOptionValues(array $valueArray) {
       */ 
 
 public function CreateBoardingPages($id) {
+    require_once ('../config/database.php');
         $BoardingPostModel = new BoardingPostModel();
         $BoardingPostArray = $BoardingPostModel->GetBoardingDetailsToDisplay($id);
+         $student_email=$_SESSION['email'];
+
+          $result=reg_userIshan::getReq($connection,$student_email,$id);//$id means B_post_id
+        $record=mysqli_fetch_assoc($result);
+        // echo "<pre>";
+        // print_r($record);
+        // echo "</pre>";
+        if($record)
+        {
+            if($record['isAccept']==0)
+            {
+                echo "<script>addEventListener('load',(e)=>{
+                    document.getElementById('demo').disabled=true;
+                    document.getElementById('demo').style.backgroundColor='gray';
+                    document.getElementById('demo').value='Pending';
+            });
+            </script>";
+            }
+            else if($record['isAccept']==1)
+            {
+
+               
+                echo "<script>addEventListener('load',(e)=>{
+                    document.getElementById('demo').disabled=true;
+                    document.getElementById('demo').style.backgroundColor='green';
+                    document.getElementById('demo').value='Accepted';
+            });
+            </script>";
+            }
+             else if($record['isAccept']==2)
+            {
+
+               
+                echo "<script>addEventListener('load',(e)=>{
+                    document.getElementById('demo').disabled=true;
+                    document.getElementById('demo').style.backgroundColor='red';
+                    document.getElementById('demo').value='Rejected';
+            });
+            </script>";
+            }
+            /////////////practise
+
+           // echo($record['date']);
+        //    echo '<br>'.time();
+          //  echo '<br>'.date($record['date']);
+           //  echo '<br>'.date('d');
+
+            /////////////
+        }
+
+
+
         $result = "";
         
         //Generate a Boarding_post for each BoardingPostEntity in array
@@ -193,15 +250,10 @@ public function CreateBoardingPages($id) {
                     <div class='requestBlock'>
                         <hr/>
                         <div class='requestInner'>
-                    
                             request this boarding place :  
-                         <button class='button request'>Request</button>
-                        </div>
-                    </div>
-                    
-                        "
-
-                     ;
+                            <form action='../controller/SRequestIshan.php?click1&description=$boarding_post->description&category=$boarding_post->category&B_post_id=$boarding_post->B_post_id&city=$boarding_post->city&BOid=$boarding_post->BOid' method='post'><input id='demo' class='btn6 request' type='submit' value='Request'></form>
+                               </div>
+                    </div>";
         }        
         return $result;
         

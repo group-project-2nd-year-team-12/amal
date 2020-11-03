@@ -74,6 +74,7 @@
                 elseif($record['level']=="boardings_owner")
                 {
                         $_SESSION['BOid']=$user_id['BOid'];
+                        
                         header('Location:../index.php');
                 }
                 elseif($record['level']=="food_supplier") 
@@ -96,7 +97,6 @@
         } else{
                 header('Location:../views/user_loging.php?errors='.'errors');
         }    
-        
 }	
 
 ?>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../resource/css/contact.css">
     <link rel="stylesheet" href="../resource/css/nav.css">
     <link rel="stylesheet" href="../resource/css/footer.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../resource/css/all.css">
     
   
     <title>Document</title>
@@ -28,7 +28,8 @@
         </div> 
         <div class="details">
             <h1>Meet group-12 Project-Bodima </h1>
-            <p> Hi, We are the undergradulate student of the university of colombo school of computing. This platform is result of our 2nd year group project. We analyze the problems faced by university students. Those analyzes identified two major issues facing university students. One is to find accommodation to stay. Another is to provide food. We analysis these problem and create a platform to soluve this problem</p>
+            <p> Hi, We are undergradulates of the University Of Colombo School of Computing. This platform is a result of our 2nd year group project. We analyze the problems faced by university students. We identified two major issues facing university students by that analysis. those main problems were:
+             <br/> dificulties of normal process of finding accommodation to stay. Another is to provide food. We created this platform to help them as well as facilitate them. </p>
         </div>
         <div class="pic">
             <div class="picture">

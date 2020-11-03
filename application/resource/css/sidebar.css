@@ -11,6 +11,7 @@
   position: fixed;
   left: 0;
   width: 310px;
+  min-height: 100vh;
   /*height: calc(100% - 9%);*/
   transition: 0.5s;
   transition-property: left;

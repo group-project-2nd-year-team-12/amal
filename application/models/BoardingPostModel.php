@@ -1,26 +1,22 @@
 <?php
 
 require ("../Entities/Boarding_post_Entity.php");
+session_start();
 
 class BoardingPostModel {
     
     
     //get distinct boarding categories from boadring_post table in database
-    function GetBoardingCategories() {
-        require '../config/database.php';
-
-        //$dbserver,$dbuser,$dbpass,$dbname
-        //Open connection and Select database.   
-        $link= mysqli_connect($dbserver, $dbuser, $dbpass) or die(mysqli_error($query ));
-        mysqli_select_db($link,$dbname);
-        $result = mysqli_query($link,"SELECT DISTINCT category FROM boarding_post") or die(mysqli_error($query ));
+    function GetBoardingCategories() {   
+        require ("../config/database.php");
+        $result = mysqli_query($connection,"SELECT DISTINCT category FROM boarding_post") or die(mysqli_error($connection));
         $categories = array();
 
         //Get data from database.
         while ($row = mysqli_fetch_array($result)) {
             array_push($categories, $row[0]);
         }
-        mysqli_close($link);
+        mysqli_close($connection);
         return $categories;
     }
     
@@ -28,14 +24,10 @@ class BoardingPostModel {
     function GetBoardingbyCategory($category) {
         require '../config/database.php';
 
-        //Open connection and Select database.     
-        $conn=mysqli_connect($dbserver, $dbuser, $dbpass) or die(mysqli_error($query ));
-        mysqli_select_db($conn,$dbname);
-
 // , $girlsBoys, $person_count, $cost_per_person, $rating, $image, $house_num,$lane,$city,$postal_code,$district,$description,$location,$lifespan,$post_amount,$review,$keymoney
 
-        $query = "SELECT B_post_id, category, girlsBoys, person_count, cost_per_person, rating, image, house_num, lane, city, district, description, location, lifespan, post_amount, review, keymoney FROM boarding_post WHERE category LIKE '$category'";
-        $result = mysqli_query($conn,$query) or die(mysqli_error($query ));
+        $query = "SELECT B_post_id,BOid ,category, girlsBoys, person_count, cost_per_person, rating, image, house_num, lane, city, district, description, location, lifespan, post_amount, review, keymoney FROM boarding_post WHERE category LIKE '$category'";
+        $result = mysqli_query($connection,$query) ;
         $boardingPostArray = array();
         
 
@@ -59,26 +51,23 @@ class BoardingPostModel {
             $post_amount =$row[14];
             $review      =$row[15];
             $keymoney    =$row[16];
+            $BOid    =$row[17];
+
 
             //Create coffee objects and store them in an array.
-            $boarding_post = new Boarding_post_Entity($B_post_id, $category, $girlsBoys, $person_count, $cost_per_person, $rating, $image, $house_num,$lane,$city,$district,$description,$location,$lifespan,$post_amount,$review,$keymoney);
+            $boarding_post = new Boarding_post_Entity($B_post_id, $category, $girlsBoys, $person_count, $cost_per_person, $rating, $image, $house_num,$lane,$city,$district,$description,$location,$lifespan,$post_amount,$review,$keymoney,$BOid);
             array_push($boardingPostArray, $boarding_post);
         }
         //Close connection and return result
-        mysqli_close($conn);
+        mysqli_close($connection);
         return $boardingPostArray;
     }
 
 
     function GetBoardingDetailsToDisplay($id) {
         require '../config/database.php';
-
-        //Open connection and Select database.     
-        $conn=mysqli_connect($dbserver, $dbuser, $dbpass) or die(mysqli_error($query ));
-        mysqli_select_db($conn,$dbname);
-
-        $query = "SELECT B_post_id, category, girlsBoys, person_count, cost_per_person, rating, image, house_num, lane, city, district, description, location, lifespan, post_amount, review, keymoney FROM boarding_post WHERE B_post_id LIKE '$id'";
-        $result = mysqli_query($conn,$query) or die(mysqli_error($query));
+        $query = "SELECT B_post_id,BOid,category, girlsBoys, person_count, cost_per_person, rating, image, house_num, lane, city, district, description, location, lifespan, post_amount, review, keymoney FROM boarding_post WHERE B_post_id LIKE '$id'";
+        $result = mysqli_query($connection,$query) or die(mysqli_error($connection));
         $boardingPostArray = array();
 
         //Get data from database.
@@ -101,13 +90,14 @@ class BoardingPostModel {
             $post_amount =$row[14];
             $review      =$row[15];
             $keymoney    =$row[16];
+            $BOid        =$row[17];
 
             //Create coffee objects and store them in an array.
-            $boarding_post = new Boarding_post_Entity($B_post_id, $category, $girlsBoys, $person_count, $cost_per_person, $rating, $image, $house_num,$lane,$city,$district,$description,$location,$lifespan,$post_amount,$review,$keymoney);
+            $boarding_post = new Boarding_post_Entity($B_post_id, $category, $girlsBoys, $person_count, $cost_per_person, $rating, $image, $house_num,$lane,$city,$district,$description,$location,$lifespan,$post_amount,$review,$keymoney,$BOid);
             array_push($boardingPostArray, $boarding_post);
         }
         //Close connection and return result
-        mysqli_close($conn);
+        mysqli_close($connection);
         return $boardingPostArray;
     }
 

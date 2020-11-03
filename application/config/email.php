@@ -115,7 +115,6 @@ a{
     mail($email,$subject,$message,$headers);
      }
 ?>
-
 <?php 
  function blockMail($conditions,$email)
  {

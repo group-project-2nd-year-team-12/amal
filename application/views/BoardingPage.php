@@ -8,7 +8,7 @@ $BoardingPostController = new BoardingPostController();
 //Output page data
 $pid=$_GET['id'];
 $title = 'Boarding Pages';
-echo $pid;
+// $pid;
 $content = $BoardingPostController->CreateBoardingPages($pid);
 
 
